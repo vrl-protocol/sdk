@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+node_modules/
+dist/
+coverage/
+*.test.js
+sdk/python/.venv/
+sdk/python/venv/
+sdk/go/bin/

@@ -4,16 +4,17 @@ build-backend = "setuptools.backends.legacy:build"
 
 [project]
 name = "vrl-sdk"
-version = "0.1.0"
-description = "Python SDK for the VRL Proof Bundle Specification — cryptographically verifiable AI outputs"
+version = "0.2.0"
+description = "Python SDK for the Verifiable Reality Layer (VRL) Proof Bundle Specification v1.0"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
-authors = [{name = "VRL Protocol Contributors", email = "hello@vrl-protocol.dev"}]
+authors = [{name = "Verifiable Reality Layer Contributors", email = "info@vrl.io"}]
 keywords = ["vrl", "zero-knowledge", "zkp", "ai-verification", "proof-bundle", "cryptography", "compliance"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -21,15 +22,15 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
     "Topic :: Security :: Cryptography",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
 [project.urls]
-Homepage = "https://vrl-protocol.github.io/spec"
-Repository = "https://github.com/vrl-protocol/spec"
-Documentation = "https://github.com/vrl-protocol/spec/tree/main/sdk/python"
-"Bug Tracker" = "https://github.com/vrl-protocol/spec/issues"
+Homepage = "https://github.com/vrl-protocol/sdk"
+Repository = "https://github.com/vrl-protocol/sdk"
+Documentation = "https://github.com/vrl-protocol/sdk/tree/main/sdk/python"
+"Bug Tracker" = "https://github.com/vrl-protocol/sdk/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "pytest-cov>=4.0"]

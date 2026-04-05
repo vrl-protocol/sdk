@@ -1,90 +1,62 @@
 # Publishing vrl-sdk to PyPI
 
-Follow these steps to publish the Python SDK to PyPI.
+Follow these steps to publish the Python SDK from `vrl-protocol/sdk` to PyPI.
 
 ## Prerequisites
 
 - PyPI account at https://pypi.org
-- GitHub repository access with admin permissions
+- GitHub repository access with admin permissions on `vrl-protocol/sdk`
 
-## Step 1: Create PyPI Account
-
-If you don't have a PyPI account:
-
-1. Visit https://pypi.org/account/register/
-2. Complete the registration and email verification
-3. Save your credentials securely
-
-## Step 2: Generate PyPI API Token
+## Step 1: Generate a PyPI API Token
 
 1. Log in to https://pypi.org
-2. Click your account name → Account Settings
-3. Go to API tokens section
+2. Click your account name -> Account Settings
+3. Go to API tokens
 4. Click "Add API token"
-5. Set the scope to "Entire account" (or limit to the `vrl-sdk` project if available)
-6. Copy the generated token (it won't be displayed again)
+5. Scope it to `vrl-sdk` if possible
+6. Copy the generated token
 
-## Step 3: Add Token as GitHub Secret
+## Step 2: Add the Token to GitHub
 
-1. Navigate to your GitHub repository
-2. Go to Settings → Secrets and variables → Actions
-3. Click "New repository secret"
-4. Name: `PYPI_API_TOKEN`
-5. Value: Paste the PyPI API token from Step 2
-6. Click "Add secret"
+1. Open `https://github.com/vrl-protocol/sdk/settings/secrets/actions`
+2. Click "New repository secret"
+3. Name: `PYPI_API_TOKEN`
+4. Value: paste the PyPI token
+5. Save
 
-## Step 4: Trigger PyPI Publication
+## Step 3: Prepare the Version
 
-1. Create a new release in GitHub:
-   - Go to Releases → Draft a new release
-   - Tag version: `v0.1.0` (matches version in `pyproject.toml`)
-   - Release title: `v0.1.0 - Initial Release`
-   - Add release notes describing the SDK
-   - Click "Publish release"
+Before release, ensure these files all carry the same version:
 
-2. This automatically triggers the publish workflow in `.github/workflows/publish.yml`
+- `sdk/python/pyproject.toml`
+- `sdk/python/setup.py`
+- `sdk/python/vrl/__init__.py`
 
-3. The workflow will:
-   - Build the distribution package
-   - Upload to PyPI using the `PYPI_API_TOKEN` secret
-   - Mark the release as complete
+The first standalone SDK repo release target is `0.2.0`.
+
+## Step 4: Trigger Publication
+
+1. Create a GitHub release at `https://github.com/vrl-protocol/sdk/releases/new`
+2. Tag: `v0.2.0`
+3. Title: `v0.2.0`
+4. Publish the release
+
+This triggers `.github/workflows/publish.yml`.
 
 ## Step 5: Verify Publication
 
-1. Visit https://pypi.org/project/vrl-sdk/
-2. Within ~5 minutes of release creation, the package should appear
+1. Visit https://github.com/vrl-protocol/sdk/actions
+2. Visit https://pypi.org/project/vrl-sdk/
 3. Test installation:
 
-   ```bash
-   pip install vrl-sdk==0.1.0
-   ```
-
-4. Verify the package loads:
-
-   ```bash
-   python -c "import vrl; print(vrl.__version__)"
-   ```
-
-## Troubleshooting
-
-- **"Workflow failed"**: Check `.github/workflows/publish.yml` for syntax errors
-- **"No module named vrl"**: Ensure `vrl/` directory exists and contains `__init__.py`
-- **"Version conflict"**: If `0.1.0` already exists, update the version in `pyproject.toml` and create a new release tag
-- **Token expired**: Generate a new token and update the `PYPI_API_TOKEN` secret
+```bash
+pip install vrl-sdk==0.2.0
+python -c "import vrl; print(vrl.__version__)"
+```
 
 ## Future Releases
 
-For subsequent releases:
-
-1. Update version in `pyproject.toml` (e.g., `0.2.0`)
-2. Update `CHANGELOG.md` or release notes
-3. Create and push a new git tag: `git tag v0.2.0`
-4. Create a GitHub release for that tag
-5. The publish workflow runs automatically
-
-## Security Notes
-
-- Never commit the PyPI token in code
-- Rotate tokens periodically
-- Use a project-scoped token when possible
-- Restrict package upload permissions to CI/CD only
+1. Update the package version in the Python metadata files
+2. Create a new Git tag, for example `v0.2.1`
+3. Create the matching GitHub release on `vrl-protocol/sdk`
+4. Let the publish workflow upload the package

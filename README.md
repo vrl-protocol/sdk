@@ -1,6 +1,6 @@
 # VRL SDK
 
-The installable developer SDK repository for VRL.
+The canonical multi-language SDK repository for VRL.
 
 This repo contains:
 
@@ -8,5 +8,11 @@ This repo contains:
 - `sdk/typescript/`
 - `sdk/go/`
 - shared example bundles in `verifier/test_bundles/`
+- `.github/workflows/` for SDK CI and package publishing
 
-Use this repo for package publishing, SDK documentation, and language-specific CI.
+Use this repo for SDK development, package publishing, and language-specific CI.
+
+Current standalone SDK release line:
+
+- Python package: `vrl-sdk`
+- First standalone SDK repo release target: `v0.2.0`

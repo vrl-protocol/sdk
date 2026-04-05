@@ -13,25 +13,22 @@ This SDK provides:
 Example:
     from vrl import ProofBundleBuilder, Verifier, ComputationBuilder
 
-    # Build a bundle
     bundle = (ProofBundleBuilder()
         .set_ai_identity(ai_identity)
         .set_computation(computation)
         .set_proof(proof)
         .build())
 
-    # Verify a bundle
     verifier = Verifier()
     result = verifier.verify(bundle)
     if result.is_valid:
         print("Bundle is valid!")
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Verifiable Reality Layer Contributors"
-__license__ = "CC BY 4.0"
+__license__ = "MIT"
 
-# Core classes
 from .bundle import (
     ProofBundle,
     Computation,
@@ -42,32 +39,17 @@ from .bundle import (
     TrustContext,
     TimestampAuthority,
     ImmutableAnchor,
-    AIIdentity as BundleAIIdentity
+    AIIdentity as BundleAIIdentity,
 )
-
-# Identity
-from .identity import (
-    AIIdentity,
-    AIIdentityBuilder
-)
-
-# Verification
+from .identity import AIIdentity, AIIdentityBuilder
 from .verifier import (
     Verifier,
     VerificationResult,
     VerificationStatus,
     VerificationDetail,
-    CircuitRegistry
+    CircuitRegistry,
 )
-
-# Builders
-from .builder import (
-    ProofBundleBuilder,
-    ComputationBuilder,
-    ProofBuilder
-)
-
-# Hash utilities
+from .builder import ProofBundleBuilder, ComputationBuilder, ProofBuilder
 from .hashing import (
     canonical_json,
     sha256,
@@ -78,11 +60,10 @@ from .hashing import (
     compute_output_hash,
     compute_trace_hash,
     compute_commitment_hash,
-    compute_bundle_id_from_integrity
+    compute_bundle_id_from_integrity,
 )
 
 __all__ = [
-    # Core
     "ProofBundle",
     "Computation",
     "Proof",
@@ -92,20 +73,16 @@ __all__ = [
     "TrustContext",
     "TimestampAuthority",
     "ImmutableAnchor",
-    # Identity
     "AIIdentity",
     "AIIdentityBuilder",
-    # Verification
     "Verifier",
     "VerificationResult",
     "VerificationStatus",
     "VerificationDetail",
     "CircuitRegistry",
-    # Builders
     "ProofBundleBuilder",
     "ComputationBuilder",
     "ProofBuilder",
-    # Hashing
     "canonical_json",
     "sha256",
     "compute_ai_id",
@@ -115,5 +92,5 @@ __all__ = [
     "compute_output_hash",
     "compute_trace_hash",
     "compute_commitment_hash",
-    "compute_bundle_id_from_integrity"
+    "compute_bundle_id_from_integrity",
 ]

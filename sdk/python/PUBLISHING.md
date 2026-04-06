@@ -32,13 +32,13 @@ Before release, ensure these files all carry the same version:
 - `sdk/python/setup.py`
 - `sdk/python/vrl/__init__.py`
 
-The first standalone SDK repo release target is `0.2.0`.
+The current standalone SDK repo release target is `0.2.1`.
 
 ## Step 4: Trigger Publication
 
 1. Create a GitHub release at `https://github.com/vrl-protocol/sdk/releases/new`
-2. Tag: `v0.2.0`
-3. Title: `v0.2.0`
+2. Tag: `v0.2.1`
+3. Title: `v0.2.1`
 4. Publish the release
 
 This triggers `.github/workflows/publish.yml`.
@@ -50,7 +50,7 @@ This triggers `.github/workflows/publish.yml`.
 3. Test installation:
 
 ```bash
-pip install vrl-sdk==0.2.0
+pip install vrl-sdk==0.2.1
 python -c "import vrl; print(vrl.__version__)"
 ```
 

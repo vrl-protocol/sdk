@@ -15,4 +15,4 @@ Use this repo for SDK development, package publishing, and language-specific CI.
 Current standalone SDK release line:
 
 - Python package: `vrl-sdk`
-- First standalone SDK repo release target: `v0.2.0`
+- Current standalone SDK repo release target: `v0.2.1`

@@ -25,7 +25,7 @@ Example:
         print("Bundle is valid!")
 """
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __author__ = "Verifiable Reality Layer Contributors"
 __license__ = "MIT"
 

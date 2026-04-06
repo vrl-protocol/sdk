@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/vrl-protocol/spec/sdk/go/vrl"
+	"github.com/vrl-protocol/sdk/sdk/go/vrl"
 )
 
 func main() {

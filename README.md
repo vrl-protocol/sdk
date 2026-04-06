@@ -16,3 +16,11 @@ Current standalone SDK release line:
 
 - Python package: `vrl-sdk`
 - Current standalone SDK repo release target: `v0.2.1`
+
+Quick proof-of-concept flow:
+
+```powershell
+cd "C:\Users\13173\OneDrive\Documents\vrl-split\sdk\sdk\python"
+python examples/build_and_verify.py
+python -m pytest tests -q
+```

@@ -56,6 +56,9 @@ This writes `examples/sdk_demo_bundle.json` and prints a summary containing:
 - `proof_hash`
 - verification status
 
+For a comparison with the reference server proof pipeline and the difference in assurance level, see:
+- `https://github.com/vrl-protocol/spec/blob/main/PROOF_PATHS.md`
+
 To inspect the generated artifact, open:
 
 ```bash
